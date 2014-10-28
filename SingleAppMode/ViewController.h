@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)startSingleMode:(id)sender;
+- (IBAction)stopSingleMode:(id)sender;
 
 @end
 

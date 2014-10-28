@@ -12,7 +12,6 @@
 		EE3CD16D19FFBAB200C554AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CD16C19FFBAB200C554AF /* ViewController.m */; };
 		EE3CD17019FFBAB200C554AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3CD16E19FFBAB200C554AF /* Main.storyboard */; };
 		EE3CD17219FFBAB200C554AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3CD17119FFBAB200C554AF /* Images.xcassets */; };
-		EE3CD17519FFBAB200C554AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3CD17319FFBAB200C554AF /* LaunchScreen.xib */; };
 		EE3CD18119FFBAB200C554AF /* SingleAppModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CD18019FFBAB200C554AF /* SingleAppModeTests.m */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		EE3CD16C19FFBAB200C554AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EE3CD16F19FFBAB200C554AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE3CD17119FFBAB200C554AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EE3CD17419FFBAB200C554AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EE3CD17A19FFBAB200C554AF /* SingleAppModeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleAppModeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3CD17F19FFBAB200C554AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3CD18019FFBAB200C554AF /* SingleAppModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleAppModeTests.m; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				EE3CD16C19FFBAB200C554AF /* ViewController.m */,
 				EE3CD16E19FFBAB200C554AF /* Main.storyboard */,
 				EE3CD17119FFBAB200C554AF /* Images.xcassets */,
-				EE3CD17319FFBAB200C554AF /* LaunchScreen.xib */,
 				EE3CD16419FFBAB200C554AF /* Supporting Files */,
 			);
 			path = SingleAppMode;
@@ -168,6 +165,7 @@
 				TargetAttributes = {
 					EE3CD16019FFBAB200C554AF = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = WTQHZW3YL7;
 					};
 					EE3CD17919FFBAB200C554AF = {
 						CreatedOnToolsVersion = 6.1;
@@ -200,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE3CD17019FFBAB200C554AF /* Main.storyboard in Resources */,
-				EE3CD17519FFBAB200C554AF /* LaunchScreen.xib in Resources */,
 				EE3CD17219FFBAB200C554AF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,14 +247,6 @@
 				EE3CD16F19FFBAB200C554AF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EE3CD17319FFBAB200C554AF /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE3CD17419FFBAB200C554AF /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -345,9 +334,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SingleAppMode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -355,9 +347,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SingleAppMode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -414,6 +409,7 @@
 				EE3CD18619FFBAB200C554AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE3CD18719FFBAB200C554AF /* Build configuration list for PBXNativeTarget "SingleAppModeTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +418,7 @@
 				EE3CD18919FFBAB200C554AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
