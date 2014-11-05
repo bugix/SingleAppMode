@@ -165,7 +165,7 @@
 				TargetAttributes = {
 					EE3CD16019FFBAB200C554AF = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = WTQHZW3YL7;
+						DevelopmentTeam = 9ZT9Z93FLM;
 					};
 					EE3CD17919FFBAB200C554AF = {
 						CreatedOnToolsVersion = 6.1;

@@ -17,11 +17,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    // Add Notification Center observer to be alerted of any change to NSUserDefaults.
+    
+    // Managed app configuration changes pushed down from an MDM server appear in NSUSerDefaults.
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSUserDefaultsDidChangeNotification
+     
+                                                      object:nil
+     
+                                                       queue:[NSOperationQueue mainQueue]
+     
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      [self readDefaultsValues];
+                                                      
+                                                  }];
+    
+    
+    
+    // Call readDefaultsValues to make sure default values are read at least once.
+    
+    [self readDefaultsValues];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// The Managed app configuration dictionary pushed down from an MDM server are stored in this key.
+
+static NSString * const kConfigurationKey = @"com.apple.configuration.managed";
+
+// This sample application allows for a server url and cloud document switch to be configured via MDM
+
+// Application developers should document feedback dictionary keys, including data types and valid value ranges.
+
+static NSString * const kConfigurationLabelTextKey = @"labelText";
+
+- (void)readDefaultsValues {
+    
+
+    NSDictionary *serverConfig = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kConfigurationKey];
+    
+    NSString *labelTextString = serverConfig[kConfigurationLabelTextKey];
+    
+    
+    
+    // Data coming from MDM server should be validated before use.
+    
+    // If validation fails, be sure to set a sensible default value as a fallback, even if it is nil.
+    
+    if (labelTextString && [labelTextString isKindOfClass:[NSString class]]) {
+        
+        self.label.text = labelTextString;
+        
+    } else {
+        
+        self.label.text = @"Default label text";
+        
+    }
 }
 
 - (IBAction)startSingleMode:(id)sender {

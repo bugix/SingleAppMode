@@ -13,5 +13,8 @@
 - (IBAction)startSingleMode:(id)sender;
 - (IBAction)stopSingleMode:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
+
 @end
 
